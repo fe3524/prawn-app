@@ -1,35 +1,17 @@
 module PracticePdf
   class PostPdf < Prawn::Document
     def initialize
-      # 新規PDF作成
-      super(page_size: 'A4')
-      # 座標を表示
-      stroke_axis
+      super(page_size: 'A4') # 新規PDF作成
 
-      header
-    end
+      # font_families.update('Test' => { normal: 'vendor/fonts/Honoka_Shin_Mincho_L.otf' })
+      # font 'Test'
 
-    def header
-      font FONT
-      text_box 'ヘッダー'
+      stroke_axis # 座標を表示
 
-      font FONT_BOLD
-      text_box 'ヘッダー', at: [0, 730], size: 10
+      # image 'app/assets/images/0.jpg', at: [10, 200], width: 100
+      # image 'app/assets/images/0.jpg', at: [150, 200], width: 150
 
-      font FONT_EXTRALIGHT
-      text_box 'ヘッダー', at: [0, 700], size: 20
-
-      font FONT_HEAVY
-      text_box 'ヘッダー', at: [0, 650], size: 30
-
-      font FONT_LIGHT
-      text_box 'ヘッダー', at: [0, 600], size: 40
-
-      font FONT_MEDIUM
-      text_box 'ヘッダー', at: [0, 550], size: 50
-
-      font FONT_NORMAL
-      text_box 'ヘッダー', at: [0, 500], size: 60
+      draw_text 'Family', at: [160, 50], size: 30
     end
   end
 end

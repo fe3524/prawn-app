@@ -1,5 +1,4 @@
 class PostPdfController < ApplicationController
-
   def index
     respond_to do |format|
       format.pdf do
@@ -9,8 +8,6 @@ class PostPdfController < ApplicationController
           type: 'application/pdf',
           disposition: 'inline' # 外すとダウンロード
       end
-      format.html
     end
   end
-
 end
