@@ -9,7 +9,8 @@ class PostPdfController < ApplicationController
           type: 'application/pdf',
           disposition: 'inline' # 外すとダウンロード
       end
+      format.html
     end
   end
-  
+
 end
